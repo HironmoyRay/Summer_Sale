@@ -17,28 +17,25 @@ function setProduct(idNo) {
   itemsContainer.appendChild(li);
 }
 
-
-
 function setPrice(id) {
   const totalPriceField = document.getElementById("total-price-field");
+  const totalPriceFieldValue = parseFloat(totalPriceField.innerText);
+  const newTotalPrice = getPrice(id) + totalPriceFieldValue;
+
   const discountField = document.getElementById("discount-field");
+  const discountFieldValue = parseFloat(discountField.innerText);
+
   const withDiscountTotalField = document.getElementById(
     "with-discount-total-field"
   );
-  const totalPriceFieldValue = parseFloat(totalPriceField.innerText);
-  const newTotalPrice = getPrice(id) + totalPriceFieldValue;
+  const withDiscountTotalFieldValue = newTotalPrice - discountFieldValue;
+  withDiscountTotalField.innerText = withDiscountTotalFieldValue;
+
   totalPriceField.innerText = newTotalPrice;
+
   purchaseButtonEnable(newTotalPrice);
   applyButtonEnable(newTotalPrice);
-  // console.log(typeof(newTotalPrice));
-  // if (newTotalPrice >= 200) {
-  //   const discountTotal = discount(newTotalPrice);
-  //   console.log(typeof(discountTotal));
-  //   discountField.innerText = discountTotal;
-  //   withDiscountTotalField.innerText = newTotalPrice - discountTotal;
-  // } else {
-  //   withDiscountTotalField.innerText = newTotalPrice;
-  // }
+
 }
 
 function discount(price) {
@@ -46,29 +43,6 @@ function discount(price) {
   return discount;
 }
 
-function purchaseButtonEnable(price){
-  const btnPurchase = document.getElementById("btn-purchase");
-  if(price>0){
-    btnPurchase.removeAttribute("disabled");
-  }
-}
 
-function applyButtonEnable(price){
-  const btnApply = document.getElementById("btn-apply");
-  if(price>=200){
-    btnApply.removeAttribute("disabled");
-    }
-  }
 
-function isCouponCode(){
-  const couponInputField = document.getElementById("coupon-input-field");
-  const couponInputFieldValue = couponInputField.innerText;
-  if(couponInputFieldValue === SELL200){
-    return true;
-  }
-  return false;
 
-  function handleApplyClick(){
-    
-  }
-}
