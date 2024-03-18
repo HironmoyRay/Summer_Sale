@@ -157,38 +157,39 @@
                 <input class=" rounded-s-md p-2 w-20 lg:w-32 border-2 border-e" type="text" name="coupon"
                     id="coupon-input-field" placeholder="Coupon Code">
                 <button id="btn-apply" onclick="handleApplyClick()"
-                    class="bg-[#E527B2] disa   text-white px-4 py-2 border-2 border-pink-400 rounded-e-md disabled:opacity-75"
-                    disabled type="submit">Apply</button>
+                    class="btn bg-[#E527B2] disa   text-white px-4 py-2 border-2 border-pink-400 rounded-e-md " disabled
+                    type="submit">Apply</button>
             </div>
             <div class="mt-12 md:mt-20 lg:mt-24 shadow-xl text-center py-4 rounded-md">
                 <div>
-                    <ul id="items-container" class="text-left p-4 font-medium">
+                    <ul id="items-container" class="text-left p-4 font-semibold text-lg">
 
                     </ul>
                     <hr>
                 </div>
-                <div class="text-left ms-2 p-4 font-medium text-lg space-y-2">
-                    <p>Total price: <span id="total-price-field">00</span></p>
-                    <p>Discount: <span id="discount-field">00</span> </p>
-                    <p>Total: <span id="with-discount-total-field">00</span> </p>
+                <div class="text-left ms-2 p-4 font-semibold text-lg space-y-2">
+                    <p>Total price: <span class="text-gray-400"><span id="total-price-field">00</span> tk</span></p>
+                    <p>Discount: <span class="text-gray-400"><span id="discount-field">00</span> tk</span></p>
+                    <p>Total: <span class="text-gray-400"><span id="with-discount-total-field">00</span> tk</span></p>
                     <hr>
                 </div>
                 <div>
-                    
-                        <button for="my_modal_6" id="btn-purchase" 
-                        class="bg-[#E527B2] text-white py-2 rounded-md w-3/4 my-2 disabled:opacity-75" disabled>
-                        Make Purchase
-                    </button>
-                    
-                    
-                    <!-- <label for="my_modal_6" class="btn">open modal</label> -->
+
+
+
+
+                    <label for="my_modal_6" id="btn-purchase"
+                        class="btn bg-[#E527B2] text-white py-2 rounded-md w-3/4 my-2 " disabled>Make Purchase</label>
                     <input type="checkbox" id="my_modal_6" class="modal-toggle" />
                     <div class="modal" role="dialog">
                         <div class="modal-box">
-                            <h3 class="font-bold text-lg">Hello!</h3>
-                            <p class="py-4">This modal works with a hidden checkbox!</p>
-                            <div class="modal-action">
-                                <label for="my_modal_6" class="btn">Close!</label>
+                            <div class="flex justify-center">
+                                <img class="w-16" src="images/congo.png" alt="">
+                            </div>
+                            <h3 class="font-bold text-xl md:text-3xl ">Congratulations</h3>
+                            <p class="py-4 text-gray-500 text-sm md:text-base ">Your Purchase the product</p>
+                            <div class="text-center">
+                                <label for="my_modal_6" class="btn bg-[#E527B2] text-white"><a href="">Go Home</a></label>
                             </div>
                         </div>
                     </div>
